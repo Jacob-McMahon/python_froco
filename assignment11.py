@@ -14,4 +14,5 @@ for line in handle:
         num = int(i)
         sum = sum + num
 
+
 print(sum)
