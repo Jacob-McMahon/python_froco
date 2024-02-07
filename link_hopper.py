@@ -9,16 +9,16 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-url = (input('Enter something: '))
-html = urllib.request.urlopen(url, context = ctx).read()
+
+
+#adding code to bypass SSL cert error
+url = input('Enter things: ')
+html = urllib.request.urlopen(url).read()
 soup = BeautifulSoup(html, 'html.parser')
 
+tags = soup('a')
 
-
-# Retrieve all of the span tags
-tags = soup('span')
-count = 0
-for tag in tags:
-      
-   count = count + int(tag.contents[0])
-print(count)
+lst = list()
+for i in tags:
+    lst.append(i.get('href', None))
+print(lst)
