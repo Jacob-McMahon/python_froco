@@ -16,9 +16,8 @@ soup = BeautifulSoup(html, 'html.parser')
 
 # Retrieve all of the span tags
 tags = soup('span')
+count = 0
 for tag in tags:
-   # Look at the parts of a tag
-   print ('TAG:',tag)
-   print ('URL:',tag.get('href', None))
-   print ('Contents:',tag.contents[0])
-   print ('Attrs:',tag.attrs)
+   http://py4e-data.dr-chuck.net/comments_1975971.html   
+   count = count + int(tag.contents[0])
+print(count)
